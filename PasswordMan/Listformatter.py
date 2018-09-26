@@ -1,0 +1,26 @@
+myfile = open("passwordlist.txt", "r")
+
+file = myfile.read().split(";")
+myfile.close()
+
+counter = 0
+filteredList = {}
+for entity in file:
+    splitEntity = entity.split(":")
+    key = splitEntity[0]
+    value = splitEntity[1]
+    if key not in filteredList:
+        filteredList[key] = [value]
+    else:
+        filteredList[key].append(value)
+    counter += 1
+
+
+newfile = open("formattedpwlist.txt", "w+")
+
+for key in filteredList:
+    newfile.write("Passwords for the user " + key + ": \n")
+    for value in filteredList[key]:
+        newfile.write(value + ", ")
+    newfile.write("\n" + "\n")
+newfile.close()
