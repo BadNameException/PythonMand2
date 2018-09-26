@@ -22,7 +22,3 @@ class PingIP:
 
 Pinger = PingIP()
 Pinger.pingSubnet("192.168.1.1")
-
-
-
-
