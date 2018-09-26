@@ -24,3 +24,8 @@ for key in filteredList:
         newfile.write(value + ", ")
     newfile.write("\n" + "\n")
 newfile.close()
+
+"""
+This format is better than the original as it is a lot easier to read.
+It is also more searchable for humans as it does not duplicate usernames.
+"""
