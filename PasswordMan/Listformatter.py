@@ -1,4 +1,8 @@
-myfile = open("passwordlist.txt", "r")
+# Catches an exception if the text file can't be opened.
+try:
+    myfile = open("passwordlist.txt", "r")
+except:
+    print("Could not open the text-file.")
 
 file = myfile.read().split(";")
 myfile.close()
